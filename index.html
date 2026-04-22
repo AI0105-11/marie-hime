@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marie Hime 世界代購 — Google 商家檔案優化確認書</title>
+<style>
+  :root {
+    --bg: #FAF8F4;
+    --card: #FFFFFF;
+    --ink: #1A1A1A;
+    --muted: #6B6458;
+    --line: #E5DFD3;
+    --accent: #B8995F;
+    --accent-soft: #EFE8D6;
+    --green: #5A7A4E;
+    --red: #B04A3C;
+    --orange: #C87A3E;
+    --blue: #3E6A8C;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Microsoft JhengHei", "微軟正黑體", "PingFang TC", "Noto Sans TC", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 24px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 920px;
+    margin: 0 auto;
+    background: var(--card);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* Header */
+  header {
+    padding: 50px 56px 36px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(135deg, #FFFFFF 0%, #FAF6EE 100%);
+  }
+  .brand {
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .meta {
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+    color: var(--muted);
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+  }
+  .meta strong { color: var(--ink); font-weight: 600; }
+
+  /* Content */
+  main { padding: 36px 56px 48px; }
+
+  section { margin-bottom: 48px; }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+  h2 .num {
+    color: var(--accent);
+    margin-right: 10px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0 10px;
+    color: var(--ink);
+  }
+
+  p { margin-bottom: 10px; color: var(--ink); }
+  .note { color: var(--muted); font-size: 13px; }
+
+  /* Summary card grid */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .stat-card {
+    background: var(--accent-soft);
+    padding: 18px 14px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .stat-card .label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .stat-card .value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .stat-card .unit {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* Keyword card */
+  .kw-card {
+    background: #FDFCF8;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    border-radius: 3px;
+  }
+  .kw-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .kw-term {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .kw-ranks {
+    display: flex;
+    gap: 18px;
+    font-size: 13px;
+  }
+  .kw-rank {
+    color: var(--muted);
+  }
+  .kw-rank .v {
+    display: inline-block;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-left: 4px;
+  }
+  .kw-rank.highlight .v {
+    background: var(--accent);
+    color: #FFF;
+    border-color: var(--accent);
+  }
+  .kw-rank.target .v {
+    color: var(--green);
+    border-color: var(--green);
+  }
+  .kw-benefit {
+    font-size: 14px;
+    color: var(--ink);
+    margin-top: 6px;
+  }
+  .kw-benefit strong { color: var(--accent); }
+
+  /* Field status cards */
+  .field {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .field-head {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+  }
+  .field-head.empty { background: #FDF3EF; }
+  .field-head.partial { background: #FDF8E8; }
+  .field-head.warn { background: #FDF0EA; }
+  .field-head.ok { background: #F0F5EC; }
+
+  .field-name {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .field-badge {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .field-badge.empty { background: var(--red); color: #FFF; }
+  .field-badge.partial { background: var(--orange); color: #FFF; }
+  .field-badge.warn { background: var(--orange); color: #FFF; }
+  .field-badge.ok { background: var(--green); color: #FFF; }
+
+  .field-body {
+    padding: 16px 20px;
+  }
+  .field-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .field-row:last-child { margin-bottom: 0; }
+  .field-label {
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .field-value { color: var(--ink); }
+  .field-value.muted { color: var(--muted); font-style: italic; }
+  .field-value.danger { color: var(--red); }
+  .field-value.arrow {
+    color: var(--ink);
+    padding: 8px 12px;
+    background: var(--accent-soft);
+    border-left: 2px solid var(--accent);
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  /* Code block (copyable content) */
+  .code-block {
+    background: #F4F1E9;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 14px 18px;
+    font-family: "Consolas", "Microsoft JhengHei", monospace;
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--ink);
+    margin: 10px 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Impact tag */
+  .impact-list {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0;
+  }
+  .impact-list li {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 3px 0 3px 16px;
+    position: relative;
+  }
+  .impact-list li::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Sign-off */
+  .signoff {
+    background: var(--accent-soft);
+    padding: 32px 36px;
+    border-radius: 4px;
+    margin-top: 24px;
+  }
+  .signoff h3 { font-size: 17px; margin-bottom: 14px; }
+  .signoff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 24px;
+  }
+  .sign-line {
+    padding-bottom: 24px;
+    border-bottom: 1.5px solid var(--ink);
+    margin-bottom: 8px;
+  }
+  .sign-label {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .check-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .check-row:last-child { border-bottom: none; }
+  .check-box {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--ink);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .check-text { flex: 1; font-size: 14px; }
+
+  /* Footer */
+  footer {
+    padding: 20px 56px;
+    background: #F4F1E9;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+
+  /* Print */
+  @media print {
+    body { background: #FFF; padding: 0; font-size: 11pt; }
+    .page { box-shadow: none; max-width: 100%; }
+    header { padding: 32px 40px 24px; }
+    main { padding: 24px 40px 32px; }
+    section { margin-bottom: 28px; page-break-inside: avoid; }
+    .kw-card, .field { page-break-inside: avoid; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 14pt; }
+  }
+
+  @media (max-width: 720px) {
+    body { padding: 12px; font-size: 14px; }
+    header { padding: 32px 24px 24px; }
+    main { padding: 24px 24px 32px; }
+    h1 { font-size: 22px; }
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .signoff { padding: 24px; }
+    .signoff-grid { grid-template-columns: 1fr; gap: 24px; }
+    .field-row { grid-template-columns: 1fr; gap: 4px; }
+    .kw-ranks { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="brand">MARIE HIME · 歐洲精品代購 · EST. 2014</div>
+  <h1>Google 商家檔案（GBP）優化確認書</h1>
+  <div class="subtitle">委託優化方案／業主確認版</div>
+  <div class="meta">
+    <span><strong>商家名稱</strong>　Marie Hime 世界代購</span>
+    <span><strong>文件日期</strong>　2026-04-21</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════ 一、目前狀態 ═══════ -->
+<section>
+  <h2><span class="num">一</span>目前商家在 Google 上的表現</h2>
+  <div class="summary-grid">
+    <div class="stat-card">
+      <div class="label">Google 評分</div>
+      <div class="value">4.8</div>
+      <div class="unit">⭐ 優秀</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Google 評論數</div>
+      <div class="value">6</div>
+      <div class="unit">則（偏少）</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">月瀏覽量</div>
+      <div class="value">769</div>
+      <div class="unit">次</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">6 個月客戶互動</div>
+      <div class="value">293</div>
+      <div class="unit">次</div>
+    </div>
+  </div>
+  <p class="note">
+    目前品牌基礎紮實（4.8 星、12 年歷史、IG 53,000+ 追蹤），但 Google 商家檔案多項欄位尚未填寫，導致 Maps 使用者搜尋時無法呈現完整資訊，流量無法有效轉成客戶。本確認書說明優化方向，請您審閱後簽核。
+  </p>
+</section>
+
+<!-- ═══════ 二、關鍵字評估 ═══════ -->
+<section>
+  <h2><span class="num">二</span>關鍵字優化方向</h2>
+  <p style="margin-bottom: 18px; font-size: 14px; color: var(--muted);">
+    這份關鍵字清單是本次優化的攻擊點，共分<strong>主力 7 組</strong>與<strong>同時優化 13 組</strong>。品牌名（Marie Hime、瑪莉歐洲精品）是自然觸及，不在本清單。實際成果視 Google 演算法即時調整，我方會定期提供排名變化報告。
+  </p>
+
+  <h3 style="margin: 18px 0 14px; font-size: 17px; color: var(--accent); border-bottom: 1px solid var(--accent-soft); padding-bottom: 6px;">主力關鍵字（7 組）</h3>
+  <p style="margin-bottom: 14px; font-size: 13px; color: var(--muted);">這 7 組是最直接帶來新客的攻擊詞，我方會逐月提供排名變化報告。</p>
+
+  <div class="kw-card">
+    <div class="kw-head">
+      <div class="kw-term">大安區 精品代購</div>
+    </div>
+    <div class="kw-benefit">
+      <strong>效益</strong>：大安區找精品代購的在地客源，擠進前段排名後每月預估可帶來 30–50 個精準詢問。本次優化核心詞之一。
+    </div>
+  </div>
+
+  <div class="kw-card">
+    <div class="kw-head">
+      <div class="kw-term">大安區 歐洲代購</div>
+    </div>
+    <div class="kw-benefit">
+      <strong>效益</strong>：差異化定位詞（歐洲線 vs 亞洲／日韓代購），競爭對手少，推升空間大。
+    </div>
+  </div>
+
+  <div class="kw-card">
+    <div class="kw-head">
+      <div class="kw-term">大安區 CHANEL 代購</div>
+    </div>
+    <div class="kw-benefit">
+      <strong>效益</strong>：CHANEL 是貴店官網主力品牌（商品數最多），這組詞排名提升後新客來源穩定。
+    </div>
+  </div>
+
+  <div class="kw-card">
+    <div class="kw-head">
+      <div class="kw-term">大安區 HERMES 代購</div>
+    </div>
+    <div class="kw-benefit">
+      <strong>效益</strong>：HERMES 客單高、利潤空間大，對整體營收貢獻顯著。
+    </div>
+  </div>
+
+  <div class="kw-card">
+    <div class="kw-head">
+      <div class="kw-term">大安區 CELINE 代購</div>
+    </div>
+    <div class="kw-benefit">
+      <strong>效益</strong>：CELINE 線精準客群，維持前段排名曝光穩定新客導流。
+    </div>
+  </div>
+
+  <div class="kw-card">
+    <div class="kw-head">
+      <div class="kw-term">台北 精品代購</div>
+    </div>
+    <div class="kw-benefit">
+      <strong>效益</strong>：城市級最高流量詞，觸及全台北搜尋族群，對品牌知名度累積有長期價值。
+    </div>
+  </div>
+
+  <div class="kw-card">
+    <div class="kw-head">
+      <div class="kw-term">台北 歐洲精品代購</div>
+    </div>
+    <div class="kw-benefit">
+      <strong>效益</strong>：潛力詞，競爭結果少。商家描述補齊後可快速上榜。
+    </div>
+  </div>
+
+  <h3 style="margin: 32px 0 14px; font-size: 17px; color: var(--accent); border-bottom: 1px solid var(--accent-soft); padding-bottom: 6px;">同時優化方向（13 組）</h3>
+  <p style="margin-bottom: 14px; font-size: 13px; color: var(--muted);">
+    這 13 組關鍵字會隨上述欄位優化一併被 Google 抓取（不額外加工，但整體 GBP 強化會帶動同步提升）。每月月報中會一併揭露這些詞的排名變化。
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 12px;">
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">區域 · 類別</div>
+      <div style="font-size: 14px; font-weight: 600;">大安區 精品店</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">區域 · 類別</div>
+      <div style="font-size: 14px; font-weight: 600;">大安區 代購公司</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">區域 · 類別</div>
+      <div style="font-size: 14px; font-weight: 600;">大安區 海外精品代購</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">區域 · 品牌</div>
+      <div style="font-size: 14px; font-weight: 600;">大安區 DIOR 代購</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">區域 · 品牌</div>
+      <div style="font-size: 14px; font-weight: 600;">大安區 LV 代購</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">城市 · 類別</div>
+      <div style="font-size: 14px; font-weight: 600;">台北 精品店</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">城市 · 類別</div>
+      <div style="font-size: 14px; font-weight: 600;">台北 代購公司</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">城市 · USP</div>
+      <div style="font-size: 14px; font-weight: 600;">台北 精品鑑定師</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">城市 · 品牌</div>
+      <div style="font-size: 14px; font-weight: 600;">台北 CHANEL 代購</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">城市 · 品牌</div>
+      <div style="font-size: 14px; font-weight: 600;">台北 DIOR 代購</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">城市 · 品牌</div>
+      <div style="font-size: 14px; font-weight: 600;">台北 LV 代購</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">城市 · 品牌</div>
+      <div style="font-size: 14px; font-weight: 600;">台北 HERMES 代購</div>
+    </div>
+    <div style="background: #FDFCF8; border: 1px solid var(--line); border-left: 2px solid var(--muted); padding: 12px 14px; border-radius: 3px;">
+      <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; margin-bottom: 4px;">城市 · 品牌</div>
+      <div style="font-size: 14px; font-weight: 600;">台北 CELINE 代購</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════ 三、GBP 欄位現況 ═══════ -->
+<section>
+  <h2><span class="num">三</span>目前欄位狀況與優化內容（請逐項確認）</h2>
+  <p style="margin-bottom: 18px; font-size: 14px; color: var(--muted);">
+    以下 8 個欄位是 Google 商家檔案最影響曝光的項目。我們會按照「改善後」欄位內容操作，完成後您在 Google 上的商家檔案會即時更新。請審閱每一項後在最下方簽核。
+  </p>
+
+  <!-- Field 1: 商家描述 -->
+  <div class="field">
+    <div class="field-head empty">
+      <span class="field-name">① 商家描述</span>
+      <span class="field-badge empty">空白</span>
+    </div>
+    <div class="field-body">
+      <div class="field-row">
+        <span class="field-label">目前狀態</span>
+        <span class="field-value danger">完全空白</span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">影響</span>
+        <span class="field-value">
+          搜尋「瑪莉歐洲精品」時 Google 無法認出是貴店（目前跳到新北五股另一家公司的面板）。搜尋「瑪莉 歐洲精品代購」只有 AI 摘要提及，無知識面板。客戶用中文品牌名找不到您。
+          <ul class="impact-list">
+            <li>品牌「瑪莉」中文名不觸發知識面板</li>
+            <li>城市級關鍵字如「台北 精品代購」無法對應</li>
+            <li>競爭者優勢：他們描述內都有地區與品牌關鍵詞</li>
+          </ul>
+        </span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">調整方向</span>
+        <span class="field-value arrow">
+Marie Hime世界代購（瑪莉歐洲精品代購）創立於 2014 年，是台北大安區的歐洲精品代購專門店。我們是台灣唯一全員海外持證精品鑑定師的代購品牌，提供 CHANEL、DIOR、LV、HERMES、CELINE 等歐洲一線品牌的包款、小皮件、飾品配件代購服務，從專櫃正品直送到府，支援無卡分期。
+
+實體工作室位於大安區建國南路一段，採預約制。線上官網 mariehime.com 完整商品展示、Instagram @mariehime2014（53,000+ 追蹤者）隨時更新代購資訊。
+
+代購品項：CHANEL 經典包、19 包、BOY、CELINE 包、HERMES 包、DIOR、LV 短夾、卡包、鍊子包、飾品配件、海外精品鑑定。
+
+瑪莉歐洲精品 — 專業、誠信、12 年口碑見證。
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Field 2: 次類別 -->
+  <div class="field">
+    <div class="field-head empty">
+      <span class="field-name">② 業務次類別</span>
+      <span class="field-badge empty">空白</span>
+    </div>
+    <div class="field-body">
+      <div class="field-row">
+        <span class="field-label">目前狀態</span>
+        <span class="field-value">主類別：精品店（已設）；<span class="danger">次類別：未設定</span></span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">影響</span>
+        <span class="field-value">
+          次類別決定 Google 把您帶出在哪些搜尋詞。目前只有「精品店」一個身份，所以「包包店」「珠寶飾品」「禮品」相關搜尋都抓不到您。
+        </span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">調整方向</span>
+        <span class="field-value arrow">
+新增 4 個次類別（皆為台灣合法可選）：<br>
+<strong>・手提包店</strong>（對應 CHANEL 包、HERMES 包、CELINE 包等主力）<br>
+<strong>・珠寶商</strong>（對應 CHANEL 飾品、HERMES 飾品、CELINE 飾品）<br>
+<strong>・服飾店（配件版）</strong>（對應小皮件、短夾、卡包、鍊子包）<br>
+<strong>・禮品店</strong>（對應送禮場景，如母親節/情人節代購）
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Field 3: 電話 -->
+  <div class="field">
+    <div class="field-head warn">
+      <span class="field-name">③ 電話號碼</span>
+      <span class="field-badge warn">缺漏</span>
+    </div>
+    <div class="field-body">
+      <div class="field-row">
+        <span class="field-label">目前狀態</span>
+        <span class="field-value danger">未填寫</span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">影響</span>
+        <span class="field-value">
+          Google 後台已提示「新增地點的電話號碼」。電話為空白時，GBP 信任分數評估會降分，直接影響 Maps 排名演算法結果。客戶在 Maps 上點「撥打電話」也無處可點。
+        </span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">調整方向</span>
+        <span class="field-value">填入工作室市話；若無市話，填 LINE 客服對應的主要聯絡手機。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Field 4: 開業日期 -->
+  <div class="field">
+    <div class="field-head partial">
+      <span class="field-name">④ 開業日期</span>
+      <span class="field-badge partial">GBP 未填，已取得資料</span>
+    </div>
+    <div class="field-body">
+      <div class="field-row">
+        <span class="field-label">目前狀態</span>
+        <span class="field-value">GBP 後台欄位為空白；貴店於資料蒐集表單提供為 <strong>2014 年 9 月</strong></span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">影響</span>
+        <span class="field-value">11 年老店是 Google 評估商家可信度的加分項，現在欄位空白等於放棄這個訊號。</span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">調整方向</span>
+        <span class="field-value arrow">填入 <strong>2014 年 9 月</strong>（依貴店提供之資料蒐集表單）</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Field 5: 地址 -->
+  <div class="field">
+    <div class="field-head warn">
+      <span class="field-name">⑤ 商家地址格式</span>
+      <span class="field-badge warn">違規風險</span>
+    </div>
+    <div class="field-body">
+      <div class="field-row">
+        <span class="field-label">目前狀態</span>
+        <span class="field-value danger">「建國南路一段 318 巷 15 號, Da'an District, Taipei City, 106」—— 中英文混寫</span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">影響</span>
+        <span class="field-value">
+          Google 在地搜尋對台灣地址規範是純中文或純英文二擇一，中英混用可能被系統標記異常、地址驗證風險。
+        </span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">調整方向</span>
+        <span class="field-value arrow"><strong>106 台北市大安區建國南路一段 318 巷 15 號</strong>（全中文正規化）</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Field 6: 服務範圍 -->
+  <div class="field">
+    <div class="field-head warn">
+      <span class="field-name">⑥ 服務範圍</span>
+      <span class="field-badge warn">過寬</span>
+    </div>
+    <div class="field-body">
+      <div class="field-row">
+        <span class="field-label">目前狀態</span>
+        <span class="field-value">Taiwan（全台灣）</span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">影響</span>
+        <span class="field-value">
+          服務範圍設全台時，GBP 排名權重分散到所有縣市，導致大安區本地搜尋競爭力下降。
+        </span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">調整方向</span>
+        <span class="field-value arrow">聚焦於：<strong>台北市、新北市</strong>（城市級）＋ <strong>台北市大安區／台北市信義區／台北市中正區</strong>（鄰近主商圈）</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Field 7: 服務項目 -->
+  <div class="field">
+    <div class="field-head empty">
+      <span class="field-name">⑦ 服務項目（商品清單）</span>
+      <span class="field-badge empty">空白</span>
+    </div>
+    <div class="field-body">
+      <div class="field-row">
+        <span class="field-label">目前狀態</span>
+        <span class="field-value danger">未設定任何品項</span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">影響</span>
+        <span class="field-value">
+          客戶搜尋「CHANEL 19 包」「HERMES 小皮件」等具體品項時 Google 找不到匹配，直接錯失精準流量。這些是最容易轉換成訂單的關鍵字。
+        </span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">調整方向</span>
+        <span class="field-value arrow">
+依類別分組共補 44 項服務，包含：<br>
+・5 個品牌代購（CHANEL/DIOR/LV/HERMES/CELINE）<br>
+・包款細項（經典包、19、BOY、WOC 鍊子包、迷你包等）<br>
+・小皮件類（短夾、單層錢包、拉鍊錢包、卡包等）<br>
+・飾品配件<br>
+・精品鑑定服務（呼應貴店 USP）
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Field 8: 照片 -->
+  <div class="field">
+    <div class="field-head partial">
+      <span class="field-name">⑧ 商家照片</span>
+      <span class="field-badge partial">部分缺</span>
+    </div>
+    <div class="field-body">
+      <div class="field-row">
+        <span class="field-label">目前狀態</span>
+        <span class="field-value">已有部分商品照；Google 後台提示「新增外觀相片」（外觀分類不足）</span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">影響</span>
+        <span class="field-value">
+          Maps 使用者滑商家頁面時，外觀/內部/團隊照片是決定「要不要去」的關鍵。目前這 3 個分類不足，Maps 前台自動分類標籤不顯示，新客對貴店的第一印象不完整。
+        </span>
+      </div>
+      <div class="field-row">
+        <span class="field-label">調整方向</span>
+        <span class="field-value arrow">
+目標總張數擴至 25–37 張，分類如下：<br>
+・標誌 / 封面（1 + 1 張）<br>
+・<strong>外觀（3–5 張）</strong>：工作室門口、招牌、路段引導<br>
+・<strong>內部（3–5 張）</strong>：陳列櫃、諮詢區、鑑定檯<br>
+・<strong>團隊（2–3 張）</strong>：鑑定師持海外證書特寫<br>
+・服務流程（8–12 張）：驗貨、鑑定、包裝、交付<br>
+・商品實體（6–10 張）：5 品牌代表款<br>
+<span class="note">拍攝期程與授權需另行確認</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════ 四、優化後預期效益 ═══════ -->
+<section>
+  <h2><span class="num">四</span>優化後預期效益</h2>
+  <div class="summary-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="stat-card">
+      <div class="label">主力關鍵字進前段</div>
+      <div class="value">5–6 組</div>
+      <div class="unit">7 組主力中</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Google 評論數</div>
+      <div class="value">30+</div>
+      <div class="unit">目前 6 則</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">6 個月客戶互動</div>
+      <div class="value">+50%</div>
+      <div class="unit">目前 293 次</div>
+    </div>
+  </div>
+  <p class="note" style="margin-top: 12px;">
+    以上為保守估計。關鍵字排名受 Google 演算法即時調整、競爭對手動作等因素影響，不保證絕對達成，但可用作驗收基準。我方每週會自動重新掃描 25 組關鍵字進度，並提交報告。
+  </p>
+</section>
+
+<!-- ═══════ 五、業主確認 ═══════ -->
+<section>
+  <div class="signoff">
+    <h3>五、需您提供的資訊</h3>
+    <p style="font-size: 14px; margin-bottom: 20px;">
+      以下欄位是本次優化執行前需要您補充的資料，以及需要您決定的授權項目。請於下方填寫後回覆給我方。
+    </p>
+
+    <!-- 電話號碼 -->
+    <div style="background: #FFFFFF; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 3px; padding: 16px 20px; margin-bottom: 14px;">
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 2px;">對應第 ③ 項</div>
+      <div style="font-size: 15px; font-weight: 600; margin-bottom: 10px;">電話號碼</div>
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 12px;">工作室市話優先；若無市話，可提供 LINE 客服對應的主要聯絡手機。</div>
+      <div style="background: #FAF8F4; border-bottom: 1.5px solid var(--ink); min-height: 34px; padding: 8px 12px; font-size: 14px;"></div>
+    </div>
+
+    <!-- 勞動節營業時間 -->
+    <div style="background: #FFFFFF; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 3px; padding: 16px 20px; margin-bottom: 14px;">
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 2px;">假日時段設定</div>
+      <div style="font-size: 15px; font-weight: 600; margin-bottom: 10px;">勞動節 5/1 當天營業時間</div>
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 12px;">Google 後台已提示「確認假日營業時間：勞動節」。請擇一：</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+          <div style="width: 16px; height: 16px; border: 1.5px solid var(--ink); border-radius: 2px; flex-shrink: 0;"></div>
+          <span>公休</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+          <div style="width: 16px; height: 16px; border: 1.5px solid var(--ink); border-radius: 2px; flex-shrink: 0;"></div>
+          <span>照常營業 11:00–19:00</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+          <div style="width: 16px; height: 16px; border: 1.5px solid var(--ink); border-radius: 2px; flex-shrink: 0;"></div>
+          <span>特殊時段：
+            <span style="display: inline-block; border-bottom: 1.2px solid var(--ink); min-width: 180px; padding: 0 6px;"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 預約制 -->
+    <div style="background: #FFFFFF; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 3px; padding: 16px 20px; margin-bottom: 14px;">
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 2px;">營運方式釐清</div>
+      <div style="font-size: 15px; font-weight: 600; margin-bottom: 10px;">預約制實際狀況</div>
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 12px;">GBP 目前「規劃」屬性為「不需預約」，但 Threads 寫「其餘時間需要預約」，兩者不一致。請簡述貴店實際預約方式：</div>
+      <div style="background: #FAF8F4; border-bottom: 1.5px solid var(--ink); min-height: 60px; padding: 8px 12px;"></div>
+    </div>
+
+    <!-- 鑑定師證書授權 -->
+    <div style="background: #FFFFFF; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 3px; padding: 16px 20px; margin-bottom: 14px;">
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 2px;">信任感強化</div>
+      <div style="font-size: 15px; font-weight: 600; margin-bottom: 10px;">鑑定師海外證書影像授權</div>
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 12px;">貴店 USP 為「全員海外持證」，若能提供鑑定師與證書的合照或證書正本影像上傳至 GBP，可大幅強化信任感。</div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+          <div style="width: 16px; height: 16px; border: 1.5px solid var(--ink); border-radius: 2px; flex-shrink: 0;"></div>
+          <span>同意使用證書影像</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 14px;">
+          <div style="width: 16px; height: 16px; border: 1.5px solid var(--ink); border-radius: 2px; flex-shrink: 0;"></div>
+          <span>不同意使用證書影像</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 修改意見 -->
+    <div style="margin-top: 28px;">
+      <div style="font-size: 15px; font-weight: 600; margin-bottom: 10px; color: var(--ink);">修改意見 / 補充說明</div>
+      <div style="font-size: 13px; color: var(--muted); margin-bottom: 10px;">
+        若對上述 8 個欄位、關鍵字選擇、文案內容有任何調整建議，或其他想補充的事項，請填寫於此：
+      </div>
+      <div style="background: #FFFFFF; border: 1.5px solid var(--line); border-radius: 4px; padding: 16px 18px; min-height: 160px; font-size: 13px; color: var(--muted);"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  本文件由 GBP 商家監測與優化助手 產出 ／ 依據：ranking_baseline.md · gbp_edits.md · services_copypaste.md ／ 建立日期：2026-04-21
+</footer>
+
+</div>
+</body>
+</html>
